@@ -1,0 +1,28 @@
+-> Install Docker Ubuntu
+
+obs: talves seja nessessario instalar alguns pacotes que o Docker usa, execute o comando:
+sudo apt-get install apt-transport-https ca-certificates curl gnupg software-properties-common
+
+--> Adicione os Repositórios do Docker
+
+  ->Add a chave GPG, inserindo o comando a seguir na linha de comando do sistema:
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+
+  ->Add repositório executando este comando:
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+
+--> Instale o Docker
+  sudo apt install docker-ce
+
+Como quer que o Docker inicie?
+  na ininicialização do S.O faça: sudo systemctl enable docker.
+  caso contrario não aplique o comando acima e quando for usar a ferramente
+  faça: sudo systemctl start docker.
+
+Para garantir que o Docker esteja totalmente funcional faça:
+sudo systemctl status docker (analise a saida em tela encontre algo como: Active: active (running) );
+
+se nada deu errado o Docker vai estar instalado e rodando nese momento.
+Para ver a versão do Docker.
+docker -v

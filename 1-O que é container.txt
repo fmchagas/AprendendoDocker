@@ -25,7 +25,3 @@ em diversas clouds.
 
 OBS: veja imagem de nome : Diferenciar Containers e VM.png
 Veja detalher no site: https://www.redhat.com/pt-br/topics/containers/whats-a-linux-container
-
-
-
-  
