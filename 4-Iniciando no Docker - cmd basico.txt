@@ -17,20 +17,23 @@ docker images
 -> Acessar o container
   docker attach <container ID>
 
-  -> Criar um container rodando o Nginx, -p é de porta, isto significa que meu pc(host)
+-> Criar um container rodando o Nginx, -p é de porta, isto significa que meu pc(host)
   vai rodar na porta 8080 e 80 é porta do container.
     --O que vai acontecer?
       O container na porta 80(que rodando o Nginx) vai expor na porta 8080 do pc fisico(host)
        [localhost:8080 --> container:80]
     
-    docker -it -p 8080:80 ubuntu /etc/bash
+    docker run -it -p 8080:80 ubuntu /etc/bash
 
-    isntale e suba o Nginx no container
+    *isntale e suba o Nginx no container
 
 -> Como manter as modificações feitas na imagem?
   fazendo um commit.
   docker commit <container ID> <nome-da-imagem:versão>
   docker commit d89bbbcad09d nginx-ubuntu:1.0
 
-  -> Parar um containter
+-> Subir nova imagem criada
+  docker run -it -p 6660:80 nginx-ubuntu:1.0 /etc/bash
+
+-> Parar um containter
    docker stop <container ID>
