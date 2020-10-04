@@ -2,13 +2,14 @@
 docker version (docker -v)
 
 
-docker ps
+docker ps (lista containers ativos)
+docker ps -a (lista todos os container)
 
 ->Lista imagens no host
 docker images
 
 ->baixando um container do ubuntu
-  docker run -it ubuntu /etc/bash
+  docker run -it ubuntu /bin/bash
 
 -> Sair do container
   ctrl+d --> Mata o container.
