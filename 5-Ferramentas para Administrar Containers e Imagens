@@ -26,6 +26,8 @@
 
   docker rmi 2ecd4f6925d3
 
-->Comunicando containers por link
-
+->Comunicando containers por link:
   docker run -it --name web2 --link ng1:ng1 nginx-ubuntu:1.0 /bin/bash
+
+->Criar container detached e publicado na porta 8080:80(host:container):
+  docker container run -d --name srv_megatron --publish 8080:80 nginx
