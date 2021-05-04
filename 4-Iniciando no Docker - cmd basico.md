@@ -1,3 +1,5 @@
+A imagem é como se fosse uma receita de bolo, uma série de instruções que o Docker seguirá para criar um container.
+tenho uma imagem e apartir dela crio muitos container
 
 docker version (docker -v)
 
@@ -26,7 +28,7 @@ docker images
     
     docker run -it -p 8080:80 ubuntu /etc/bash
 
-    *isntale e suba o Nginx no container
+    *instale e suba o Nginx no container
 
 -> Como manter as modificações feitas na imagem?
   fazendo um commit.
