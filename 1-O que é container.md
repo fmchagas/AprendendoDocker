@@ -1,15 +1,17 @@
+# O que é container
   Um container Linux é um conjunto de um ou mais processos organizados
 isoladamente do sistema.
 
   Uma imagem de container tem suas configuraçõe seus RPM e outro elementos
 porem compartilha do kernel do sistema operaciona.
 
---Humm então isso é o mesmo que virtualização?
+- Humm então isso é o mesmo que virtualização?
 Não, as duas tecnologias são complementares.
 
-  Vitualização: é possivel execuatar S.O(windows ou Linux) simultaneamente em um
+Vitualização: é possivel execuatar S.O(windows ou Linux) simultaneamente em um
 único sistema de hardware(Infra).
-  A virtualização usa um hipervisor para emular o hardware, o que permite
+
+A virtualização usa um hipervisor para emular o hardware, o que permite
 executar vários sistemas operacionais simultaneamente. Essa não é uma solução
 tão leve quanto o uso de containers.
 
@@ -22,6 +24,7 @@ o gerenciamento dos processos, como parte de uma aplicação maior (vários cont
 Além disso, é possível orquestrar as aplicações em vários containers
 em diversas clouds.
 
+[referência](https://www.redhat.com/pt-br/topics/containers/whats-a-linux-container)
 
-OBS: veja imagem de nome : Diferenciar Containers e VM.png
-Veja detalher no site: https://www.redhat.com/pt-br/topics/containers/whats-a-linux-container
+Veja na imagem  a diferença entre Containers e VM(Máquina Virtual)
+![demo](./Diferenciar Containers e VM.png "Diferença entre Containers e VM(Máquina Virtual)")  
