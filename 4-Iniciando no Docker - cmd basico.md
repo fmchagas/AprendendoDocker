@@ -81,3 +81,11 @@ Como parar um containter?
    docker stop <container ID>
    docker container stop <container ID>
 ```
+
+Remover todos os containers inativos
+
+```
+docker container prune
+
+docker rm <container_id> remover um unico container
+```
