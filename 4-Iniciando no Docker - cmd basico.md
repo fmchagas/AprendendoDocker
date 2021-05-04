@@ -1,42 +1,83 @@
-A imagem é como se fosse uma receita de bolo, uma série de instruções que o Docker seguirá para criar um container.
-tenho uma imagem e apartir dela crio muitos container
+# Iniciando no Docker - Comandos basicos
 
-docker version (docker -v)
+A imagem é como se fosse uma receita de bolo, uma série de instruções que o Docker seguirá para criar um container. Apartir da imagem criamos muitos container
+
+```shell
+ docker version (docker -v)
+```
+
+listar containers ativos | lista todos os container
+
+```
+ docker ps | docker ps -a
+```
 
 
-docker ps (lista containers ativos)
-docker ps -a (lista todos os container)
+Lista imagens no host
 
-->Lista imagens no host
-docker images
+```
+ docker images
+```
 
-->baixando um container do ubuntu
+Baixa uma imagem do Docker Hub e cria um container do ubuntu no modo interativo
+
+```
   docker run -it ubuntu /bin/bash
+```
 
--> Sair do container
-  ctrl+d --> Mata o container.
-  crtl+pq --> sai do container e mantem ativo.
+Sair do container
 
--> Acessar o container
+```
+  ctrl + d --> Mata o container.
+  crtl + pq --> Sai do container e mantem ativo.
+```
+
+Acessar o container
+
+```
   docker attach <container ID>
+  
+  docker start -a -i <container ID>
+```
 
--> Criar um container rodando o Nginx, -p é de porta, isto significa que meu pc(host)
-  vai rodar na porta 8080 e 80 é porta do container.
-    --O que vai acontecer?
+Criar um container rodando o Nginx, -p é de porta, isto significa que meu pc(host) vai rodar na porta 8080 e 80 é porta do container.
+
+O que vai acontecer?
+
       O container na porta 80(que rodando o Nginx) vai expor na porta 8080 do pc fisico(host)
        [localhost:8080 --> container:80]
     
     docker run -it -p 8080:80 ubuntu /etc/bash
 
-    *instale e suba o Nginx no container
 
--> Como manter as modificações feitas na imagem?
+
+Como manter as modificações feitas na imagem?
+  
+```  
   fazendo um commit.
   docker commit <container ID> <nome-da-imagem:versão>
+  
   docker commit d89bbbcad09d nginx-ubuntu:1.0
+```
 
--> Subir nova imagem criada
+Subir nova imagem criada
+
+```
   docker run -it -p 6660:80 nginx-ubuntu:1.0 /etc/bash
+```
 
--> Parar um containter
+Inicar container criado
+
+```
+ docker start <container ID>
+ docker container start <container ID>
+ 
+ docker start -a -i <container ID> (modo interativo e attach)
+```
+
+Como parar um containter?
+
+```
    docker stop <container ID>
+   docker container stop <container ID>
+```
