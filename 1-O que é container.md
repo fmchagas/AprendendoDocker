@@ -27,4 +27,4 @@ em diversas clouds.
 [referência](https://www.redhat.com/pt-br/topics/containers/whats-a-linux-container)
 
 Veja na imagem  a diferença entre Containers e VM(Máquina Virtual)
-![demo](./Diferenciar Containers e VM.png "Diferença entre Containers e VM(Máquina Virtual)")  
+![demo](Diferenciar Containers e VM.png "Diferença entre Containers e VM(Máquina Virtual)")  
