@@ -17,8 +17,7 @@ sudo apt-get install apt-transport-https ca-certificates curl gnupg software-pro
 
 Como quer que o Docker inicie?
   na ininicialização do S.O faça: sudo systemctl enable docker.
-  caso contrario não aplique o comando acima e quando for usar a ferramente
-  faça: sudo systemctl start docker.
+  caso contrario não aplique o comando acima e quando for usar a ferramenta faça: sudo systemctl start docker.
 
 Para garantir que o Docker esteja totalmente funcional faça:
 sudo systemctl status docker (analise a saida em tela encontre algo como: Active: active (running) );

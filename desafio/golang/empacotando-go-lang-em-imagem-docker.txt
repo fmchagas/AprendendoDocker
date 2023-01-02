@@ -1,0 +1,51 @@
+Rodar container com ambiente golang
+ d run -it --name myapp golang bash
+
+Rodar container com ambiente golang e compartilhar diretório de trabalho
+ d run -it --name myapp --mount type=bind,source=/home/fernandochagas/aprendizado-livre/docker/golang,target=/usr/src golang bash
+
+Dentro do container de desenvolvimento
+go run hello.go ou go run fullcycle.go
+
+Compilando binários em Go com o go build(gera um binario com mesmo nome do arquivo compilado)
+ go build hello.go ou go build fullcycle.go
+
+exec app compilada/criada
+ ./hello ou ./fullcycle
+
+
+--
+Criar imagem e imprimir o "Hello world" ou "Full Cycle Rocks!!"
+
+A imagem de nosso projeto GOLang precisa ter menos de 2MB
+
+FROM alpine #não deu alpine tem 7.5MB
+COPY fullcycle ./fullcycle
+CMD ./fullcycle
+
+--
+sistema de arquivos em camadas, apresenta uma imagem "raiz" com scratch
+
+Add os passoa abaixo em Dockerfile.prod
+ FROM scratch
+ COPY fullcycle /
+ CMD ["./fullcycle"]
+
+Obs: Sucesso imagem com 1.82MB
+
+--
+Obs: d = alias para docker
+
+d build -t fmchagas/fullcycle . -f Dockerfile.prod
+
+d run --rm fmchagas/fullcycle:latest
+
+--
+Fazer login no docker hub e enviar a imagem criada: https://docs.docker.com/engine/reference/commandline/login/
+ docker login
+
+Enviar imagem para docker hub
+ docker push fmchagas/fullcycle:latest
+
+Run container
+ d run --rm fmchagas/fullcycle:latest
