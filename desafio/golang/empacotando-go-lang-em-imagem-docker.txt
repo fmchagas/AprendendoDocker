@@ -49,3 +49,10 @@ Enviar imagem para docker hub
 
 Run container
  d run --rm fmchagas/fullcycle:latest
+ 
+ --
+Para utilizar o Multistage Building
+Utilizamos o arquivo 'Dockerfile' criamos um alias 'AS dev_local'
+
+Adicimos a imagem 'scratch' e copiamos os arquivos gerados no build da alias 'dev_local'
+
