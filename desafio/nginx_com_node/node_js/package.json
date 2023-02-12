@@ -1,0 +1,15 @@
+{
+  "name": "supremo_lista_nome",
+  "version": "1.0.0",
+  "description": "A aplicação adicionará um registro em nosso banco de dados mysql, cadastrando um nome na tabela pessoa e lista de nomes cadastrados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fernando M Chagas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}

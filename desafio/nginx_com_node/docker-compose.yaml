@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  db_mysql:
+    image: mysql:5.7
+    container_name: db_supremo_lista_nomes
+    restart: always
+    tty: true
+    volumes:
+      - ./db/mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=db_supremo_lista_nomes
+      - MYSQL_ROOT_PASSWORD=supremo_lista_nomes
+    networks:
+      - supremo-lista-nomes-network
+  
+  app:
+    build:
+      context: ./node_js
+      dockerfile: Dockerfile.prod
+    image: fmchagas/app_supremo_lista_nomes
+    container_name: app_supremo_lista_nomes
+    entrypoint: dockerize -wait tcp://db_mysql:3306 -timeout 15s node index.js
+    networks:
+      - supremo-lista-nomes-network
+    tty: true
+    depends_on:
+      - db_mysql
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: fmchagas/proxy_com_nginx
+    container_name: proxy_com_nginx
+    networks:
+      - supremo-lista-nomes-network
+    ports:
+      - '8080:80'
+    depends_on:
+      - app
+
+
+networks:
+  supremo-lista-nomes-network:
+    driver: bridge
